@@ -36,6 +36,15 @@
           bezierVertex(x + size, y + size / 3, x + size / 2, y - size / 2, x, y);
           endShape(CLOSE);
         }
+
+        function touchStarted() {
+            aloitus = 1;
+            strokeWeight(2);
+            heart(mouseX, mouseY, 150)
+            // prevent default
+            return false;
+          }
+
       let aloitus = 0;
       function draw() {
         let c = color('magenta');
@@ -44,13 +53,7 @@
           touchStarted();
         }
         }
-      function touchStarted() {
-          aloitus = 1;
-          strokeWeight(2);
-          heart(mouseX, mouseY, 150)
-          // prevent default
-          return false;
-        }
+
 
     </script>
   </div>
