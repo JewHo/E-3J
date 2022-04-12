@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>EJ</title>
+
+    <!-- Bootstrap core CSS
+    <link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet" type="text/css">
+  </head>
+<body>
+  <div class="content-box center">
+    </br>
+    </br>
+    </br>
+    <h1>Moi Kultsi</h1>
+    </br>
+    <h2>Mä rakastan sua</h2>
+    </br>
+    <h3>Testaa pyyhkii vähä alempaa kans</h3>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <h1>Tulisitko sä ihan oikeesti vaimokseni?</h1>
+    </br>
+    <h1><3:Juho</h1>
+    <script src="js/p5.js"></script>
+    <script type="text/javascript">
+      function setup() {
+        createCanvas(windowWidth, windowHeight);
+      }
+      function heart(x, y, size) {
+          beginShape();
+          vertex(x, y);
+          bezierVertex(x - size / 2, y - size / 2, x - size, y + size / 3, x, y + size);
+          bezierVertex(x + size, y + size / 3, x + size / 2, y - size / 2, x, y);
+          endShape(CLOSE);
+        }
+
+      function draw() {
+        let c = color('magenta');
+        fill(c);
+        strokeWeight(1);
+        if (mouseIsPressed === true) {
+          heart(mouseX, mouseY, 150)
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>
