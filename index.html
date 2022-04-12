@@ -26,9 +26,11 @@
     <h1><3:Juho</h1>
     <script src="js/p5.js"></script>
     <script type="text/javascript">
+    let cnv;
+    let valueX;
+    let valueY;
       function setup() {
-        createCanvas(500, 500);
-        console.log("Emma <3 Juho");
+        cnv = createCanvas(windowWidth, windowHeight);
       }
       function heart(x, y, size) {
           beginShape();
@@ -38,23 +40,20 @@
           endShape(CLOSE);
         }
 
+        function touchStarted() {
+            valueX = mouseX;
+            valueY = mouseY;
+          }
+
       function draw() {
-        console.log("Emma <3 Juho");
         let c = color('magenta');
         fill(c);
-        for (var i = 0; i < touches.length; i++) {
-         heart(touches[i].x, touches[i].y, 150);
-        }
-
-
+        heart(valueX, valueY, 150);
         }
         /* prevents the mobile browser from processing some default
          * touch events, like swiping left for "back" or scrolling
          * the page.
          */
-        function touchStarted(){
-          return false;
-        }
 
         function touchMoved(){
           return false;
