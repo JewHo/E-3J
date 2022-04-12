@@ -56,8 +56,11 @@
 
           // if no touches but touchstarted == true, then it's a regular
           // mouse interaction, so draw an ellipse for the mouse location
-          if(touches.length == 0 && touchstarted)
+          if(touches.length == 0 && touchstarted){
+              let c = color('magenta');
+              fill(c);
               heart(mouseX,mouseY, 150);
+            }
         }
 
 
