@@ -37,18 +37,15 @@
           endShape(CLOSE);
         }
 
-      function touchStarted() {
-          strokeWeight(2);
-          heart(mouseX, mouseY, 150)
-          // prevent default
-          return false;
-        }
-
       function draw() {
         let c = color('magenta');
         fill(c);
-        touchStarted();
-        
+        for (var i = 0; i < touches.length; i++) {
+         heart(touches[i].x, touches[i].y, 150);
+        }
+        else {
+          
+        }
         }
 
 
