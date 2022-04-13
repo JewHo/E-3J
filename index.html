@@ -29,7 +29,6 @@
     <script type="text/javascript">
     let touchended = false;
     let touchstarted = false;
-    let c = color('magenta');
       function setup() {
         createCanvas(displayWidth, displayHeight);
       }
@@ -46,13 +45,16 @@
           // (IOW draw a circle for every finger tip touching screen)
           // do this first so info text goes *over* the ellipses
           for(let i = 0; i < touches.length; i++) {
+            let c = color('magenta');
             fill(c);
+            noStroke();
             heart(touches[i].x ,touches[i].y, 150);
           }
 
           // if no touches but touchstarted == true, then it's a regular
           // mouse interaction, so draw an ellipse for the mouse location
           if(touches.length == 0 && touchstarted){
+              let c = color('magenta');
               fill(c);
               heart(mouseX,mouseY, 150);
             }
