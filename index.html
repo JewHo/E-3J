@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>E<3J</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Bootstrap core CSS
     <link href="css/bootstrap.min.css" rel="stylesheet">-->
@@ -105,21 +106,21 @@
         }
 
         // called whenever a touch is moving (like mouseMoved())
-        function touchMoved() {
-        	handleMouseAndTouch();
-          return false;
-        }
+        //function touchMoved() {
+        //	handleMouseAndTouch();
+        //  return false;
+        //}
 
         // use same functionality if no touch and only mouse
-        function mouseMoved() {
-        	 handleMouseAndTouch();
-        }
+        //function mouseMoved() {
+        //	 handleMouseAndTouch();
+        //}
 
         // this gets called from mouseMoved and touchMoved
         // so that this happens either way (I made up this function--
         // it's not from p5)
-        function handleMouseAndTouch() {
-        }
+        //function handleMouseAndTouch() {
+        //}
 
         // called whenever a touch event ends.
         // I test touches.length to make sure *all*
