@@ -49,6 +49,15 @@
           endShape(CLOSE);
         }
       function draw() {
+          touchStarted();
+        }
+
+
+        // called at the beginning of a touch event
+        // here I'm using it to track beginning and end of touches
+        function touchStarted() {
+          touchstarted = true;
+          touchended = false;
           // for every touch event in the touches[], draw an ellipse
           // (IOW draw a circle for every finger tip touching screen)
           // do this first so info text goes *over* the ellipses
@@ -66,14 +75,6 @@
               heart(mouseX,mouseY, 150);
               console.log("Emma <3 Juho");
             }
-        }
-
-
-        // called at the beginning of a touch event
-        // here I'm using it to track beginning and end of touches
-        function touchStarted() {
-          touchstarted = true;
-          touchended = false;
           console.log("Emma <3 Juho");
           return false;
         }
