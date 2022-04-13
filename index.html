@@ -40,17 +40,7 @@
         pixelDensity(displayDensity());
         textSize(32);
       }
-      // will handle first time visiting to grant access
-        function onAskButtonClicked() {
-          DeviceOrientationEvent.requestPermission().then(response => {
-            if (response === 'granted') {
-              permissionGranted = true
-            } else {
-              permissionGranted = false
-            }
-            this.remove()
-          }).catch(console.error)
-        }
+
       function heart(x, y, size) {
           beginShape();
           vertex(x, y);
