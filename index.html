@@ -29,6 +29,11 @@
     <script type="text/javascript">
     let touchended = false;
     let touchstarted = false;
+    let r = 255;
+    let g = 192;
+    let b = 203;
+    let gmin = 0;
+    let bmin = 0;
       function setup() {
         createCanvas(displayWidth, displayHeight);
       }
@@ -45,18 +50,39 @@
           // (IOW draw a circle for every finger tip touching screen)
           // do this first so info text goes *over* the ellipses
           for(let i = 0; i < touches.length; i++) {
-            let c = color('magenta');
+            let c = color(r,g,b);
             fill(c);
-            noStroke();
-            heart(touches[i].x ,touches[i].y, 150);
+            stroke(r-100,b+20,g+20);
+            heart(touches[i].x ,touches[i].y, 150);s
+            if (g != 0 && !(gmin)){ g = g - 1};
+            if (g == 0 && !(gmin)){ gmin = 1};
+            if (g != 192 && gmin){ g = g + 1};
+            if (g == 192 && gmin){ gmin = 0};
+
+            if (b != 0 && !(bmin)){ b = b - 1};
+            if (b == 0 && !(bmin)){ bmin = 1};
+            if (b != 203 && bmin){ b = b + 1};
+            if (b == 203 && bmin){ bmin = 0};
+            console.log(r,g,b);
           }
 
           // if no touches but touchstarted == true, then it's a regular
           // mouse interaction, so draw an ellipse for the mouse location
           if(touches.length == 0 && touchstarted){
-              let c = color('magenta');
+              let c = color(r,g,b);
               fill(c);
+              stroke(r-100,b+20,g+20);
               heart(mouseX,mouseY, 150);
+              if (g != 0 && !(gmin)){ g = g - 1};
+              if (g == 0 && !(gmin)){ gmin = 1};
+              if (g != 192 && gmin){ g = g + 1};
+              if (g == 192 && gmin){ gmin = 0};
+
+              if (b != 0 && !(bmin)){ b = b - 1};
+              if (b == 0 && !(bmin)){ bmin = 1};
+              if (b != 203 && bmin){ b = b + 1};
+              if (b == 203 && bmin){ bmin = 0};
+              console.log(r,g,b);
             }
         }
 
